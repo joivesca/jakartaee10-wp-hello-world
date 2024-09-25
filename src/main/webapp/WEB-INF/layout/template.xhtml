@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html" encoding="UTF-8">
+    <ui:insert name="metadata"></ui:insert>
+    <h:head>
+        <title>Taskboard - A JakartaEE Faces Sample</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+        <!-- styles -->
+        <link rel="stylesheet"
+              href="#{request.contextPath}/resources/css/bootstrap.min.css"/>
+        <link href="#{request.contextPath}/resources/css/font-awesome.min.css"
+              rel="stylesheet"/>
+        <link href="#{request.contextPath}/resources/css/main.css" rel="stylesheet"/>
+        <!--            <h:outputStylesheet library="css" name="main.css"></h:outputStylesheet>-->
+        <ui:insert name="headIncludes"></ui:insert>
+    </h:head>
+
+    <h:body styleClass="d-flex flex-column h-100">
+        <h:panelGroup layout="block" styleClass="header">
+            <ui:include src="/WEB-INF/layout/header.xhtml"/>
+        </h:panelGroup>
+
+        <main role="main" class="flex-shrink-0">
+            <div class="container">
+                <ui:include src="/WEB-INF/layout/alert.xhtml"/>
+
+                <h1 class="page-header display-3">
+                    <ui:insert name="pageTitle"></ui:insert>
+                </h1>
+
+                <ui:insert name="content"/>
+            </div>
+        </main>
+
+        <ui:include src="/WEB-INF/layout/footer.xhtml"/>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="#{request.contextPath}/resources/js/jquery-3.4.1.slim.min.js">
+            /** stop autoclosing **/
+        </script>
+        <script src="#{request.contextPath}/resources/js/popper.min.js">
+            /** stop autoclosing **/
+        </script>
+        <script src="#{request.contextPath}/resources/js/bootstrap.min.js">
+            /** stop autoclosing **/
+        </script>
+        <ui:insert name="bodyIncludes"></ui:insert>
+        <p:spinner />
+        <p:panel header="Product Information">
+        <p:outputLabel value="Name: " /><br/>
+        <p:outputLabel value="Price: " />
+    </p:panel>
+    </h:body>
+</f:view>
+</html>
