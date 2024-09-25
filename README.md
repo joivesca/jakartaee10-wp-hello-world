@@ -9,3 +9,6 @@ You can run the application by executing the following command from the director
 
 Once the runtime starts, you can access the project at http://localhost:8080/jakartaee-hello-world.
 
+
+Authentication REST
+https://jakarta.ee/learn/starter-guides/how-to-secure-a-restful-web-service/

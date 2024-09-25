@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Authorization Error</title>
+    <style>
+      #logoutButton {
+          width: 100%;
+          border-bottom: 1px solid black;
+          margin-bottom: 1em;
+      }
+
+      #logoutButton input {
+          position: absolute;
+          top: 2em;
+          right: 2em;
+      }
+    </style>
+</head>
+<body>
+    <h2>Error 403: Authorization failed.</h2>
+    <h:panelGroup id="logoutButton" layout="block">
+        <FORM METHOD="POST" ACTION="ibm_security_logout" NAME="logout">
+          <input type="submit" name="logout" value="Back" />
+          <input type="HIDDEN" name="logoutExitPage" value="/home" />
+        </FORM>
+    </h:panelGroup>
+    <hr/>
+    <p>You are not authorized to use this application.</p>
+</body>
+</html>
